@@ -18,10 +18,10 @@ namespace practicas
                 int numero = 0;
                 bool esNumero = false;
 
-                while(!esNumero)
+                while (!esNumero)
                 {
                     Console.Clear();
-                    Console.WriteLine("Adivinaré un número, piensalo bien y da enter para comenzar");
+                    Console.WriteLine("Adivinaré un número, piensalo y da enter para comenzar");
                     Console.ReadLine();
 
                     Console.Clear();
@@ -29,11 +29,11 @@ namespace practicas
                     Thread.Sleep(4000);
 
                     Console.Clear();
-                    Console.WriteLine("Digita tu número aquí:");
+                    Console.WriteLine("Digita tu número aquí");
                     string intput = Console.ReadLine();
 
                     Console.Clear();
-                    Console.WriteLine("Continuando análisis exhaustivo...");
+                    Console.WriteLine("Continuando análisis...");
                     Thread.Sleep(3500);
 
                     esNumero = int.TryParse(intput, out numero);
@@ -41,17 +41,17 @@ namespace practicas
                     if (!esNumero)
                     {
                         Console.Clear();
-                        Console.WriteLine("Eso no es valido, da enter e intenta de nuevo");
+                        Console.WriteLine("Eso no es valido, da enter para reintentar");
                         Console.ReadLine();
 
                         Console.Clear();
-                        Console.WriteLine("Reintentando....");
+                        Console.WriteLine("Reintentando");
                         Thread.Sleep(3500);
                     }
                 }
                 Console.Clear();
                 Console.WriteLine("Tu número es: " + numero);
-                Console.WriteLine("¿Deseas reiniciar el programa?");
+                Console.WriteLine("Deseas reiniciar el programa (s/n)");
                 string sancocho = Console.ReadLine();
                 reiniciar = sancocho.Trim().ToLower() == "s";
 
@@ -61,11 +61,13 @@ namespace practicas
                     Console.WriteLine("Cerrando...");
                     Thread.Sleep(3000);
                     Environment.Exit(1);
+
                 }
+
                 Console.Clear();
                 Console.WriteLine("Reiniciando...");
                 Thread.Sleep(3000);
-                    
+
             } while (reiniciar);
         }
     }
